@@ -1,0 +1,124 @@
+﻿<Window x:Class="MeContrata.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MeContrata"
+        mc:Ignorable="d"
+        Title="Dei o meu melhor - Cadastro de Clientes" Height="718" Width="1233">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black"/>
+                <GradientStop Color="#FF184EF5" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <TextBlock HorizontalAlignment="Left" Margin="509,10,0,0" TextWrapping="Wrap" Text="Cadastro de Clientes" VerticalAlignment="Top" Foreground="White" FontFamily="Segoe UI Variable Display Semibold" FontSize="27"/>
+        <!-- Dados pessoais -->
+
+        <Label Content="Nome Completo" HorizontalAlignment="Left" Margin="7,71,0,0" VerticalAlignment="Top" Foreground="White" FontSize="31"/>
+        <TextBox x:Name="nomecompleto" HorizontalAlignment="Left" Margin="249,83,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="346" Height="28" VerticalContentAlignment="Center" MaxLength="40"  />
+
+        <Label Content="Sexo" HorizontalAlignment="Left" Margin="169,183,0,0" VerticalAlignment="Top" Foreground="White" FontSize="31"/>
+        <ComboBox x:Name="sexo" SelectedIndex="0" Margin="249,195,871,457" >
+            <ComboBoxItem Content="Selecione" IsEnabled="False" />
+            <ComboBoxItem Content="Masculino"  />
+            <ComboBoxItem Content="Feminino" />
+        </ComboBox>
+
+
+        <Label Content="Escolaridade" HorizontalAlignment="Left" Margin="618,71,0,0" VerticalAlignment="Top" Foreground="White" FontSize="31" />
+
+        <ComboBox x:Name="escolaridade" SelectedIndex="0" Margin="799,86,287,567">
+            <ComboBoxItem Content="Selecione" IsEnabled="False" />
+            <ComboBoxItem Content="Ensino Fundamental" />
+            <ComboBoxItem Content="Ensino Médio" />
+            <ComboBoxItem Content="Ensino Técnico" />
+            <ComboBoxItem Content="Ensino Superior" />
+            <ComboBoxItem Content="-" />
+        </ComboBox>
+
+        <Label Content="Nascimento" HorizontalAlignment="Left" Margin="71,109,0,0" VerticalAlignment="Top" Foreground="White" FontSize="31"/>
+        <DatePicker x:Name="nascimento"   HorizontalAlignment="Left" Margin="249,125,0,0" VerticalAlignment="Top" Height="29" Width="145" SelectedDateChanged="DataSelecionada"/>
+        <TextBlock x:Name="idade" HorizontalAlignment="Left" Margin="405,117,0,0" TextWrapping="Wrap" Text="Idade:" VerticalAlignment="Top" Foreground="#FFF9F9F9" FontSize="28"/>
+
+        <Label Content="RG" HorizontalAlignment="Left" Margin="195,148,0,0" VerticalAlignment="Top" Foreground="White" FontSize="31" />
+        <TextBox x:Name="rg"  HorizontalAlignment="Left" Margin="249,160,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="346" Height="28" VerticalContentAlignment="Center"  MaxLength="9" PreviewTextInput="IsNumber" />
+
+        <Label Content="Profissão" HorizontalAlignment="Left" Margin="661,109,0,0" VerticalAlignment="Top" Foreground="White" FontSize="31" />
+        <TextBox x:Name="profissao" HorizontalAlignment="Left" Margin="800,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="346" Height="28" VerticalContentAlignment="Center" MaxLength="35"  />
+
+        <Label Content="CPF" HorizontalAlignment="Left" Margin="733,148,0,0" VerticalAlignment="Top" Foreground="White" FontSize="31" />
+        <TextBox x:Name="cpf" HorizontalAlignment="Left" Margin="800,160,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="346" Height="28" VerticalContentAlignment="Center" MaxLength="11" PreviewTextInput="IsNumber" />
+
+        <!--Telefones-->
+
+        <TextBlock HorizontalAlignment="Left" Margin="99,249,0,0" TextWrapping="Wrap" Text="Telefones" VerticalAlignment="Top" Foreground="White" FontSize="32"/>
+
+        <Label Content="DDD" HorizontalAlignment="Left" Margin="76,301,0,0" VerticalAlignment="Top" FontSize="25" Foreground="White"/>
+        <TextBox x:Name="ddd" HorizontalAlignment="Left" Margin="144,308,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="43" Height="25" RenderTransformOrigin="0.53,1.442" VerticalContentAlignment="Center"  MaxLength="2" PreviewTextInput="IsNumber" />
+
+        <Label Content="Número" HorizontalAlignment="Left" Margin="43,336,0,0" VerticalAlignment="Top" FontSize="25" Foreground="White"/>
+        <TextBox x:Name="numerotel" HorizontalAlignment="Left" Margin="144,345,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="132" Height="25" VerticalContentAlignment="Center" MaxLength="9" PreviewTextInput="IsNumber" />
+
+        <Label Content="Operadora" HorizontalAlignment="Left" Margin="15,370,0,0" VerticalAlignment="Top" FontSize="25" Foreground="White"/>
+        <TextBox x:Name="operadora" HorizontalAlignment="Left" Margin="144,380,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="132" Height="25" VerticalContentAlignment="Center" MaxLength="20"/>
+
+        <Button Content="Limpar Lista" HorizontalAlignment="Left" Margin="325,325,0,0" VerticalAlignment="Top" Height="38" Width="114" FontSize="20" Click="ApagarTelefones"/>
+        <Button Content="Adicionar" HorizontalAlignment="Left" Margin="325,370,0,0" VerticalAlignment="Top" Height="38" Width="114" FontSize="25" Click="TelefoneADD"/>
+
+
+        <ListBox  x:Name="telefones" Margin="19,419,780,201" MaxWidth="450" MaxHeight="175"  />
+
+        <Button Content="X" HorizontalAlignment="Left" Margin="418,418,0,0" VerticalAlignment="Top" Width="19" ToolTip="Apagar Tel 1" Background="White" Foreground="#FFFF0C0C" Click="ApagarTel1" />
+        <Button Content="X" HorizontalAlignment="Left" Margin="418,438,0,0" VerticalAlignment="Top" Width="19" ToolTip="Apagar Tel 2" Background="White" Foreground="#FFFF0C0C" Click="ApagarTel2" />
+        <Button Content="X" HorizontalAlignment="Left" Margin="418,458,0,0" VerticalAlignment="Top" Width="19" ToolTip="Apagar Tel 3" Background="White" Foreground="#FFFF0C0C" Click="ApagarTel3" />
+
+        <!-- Endereços -->
+
+        <TextBlock HorizontalAlignment="Left" Margin="691,249,0,0" TextWrapping="Wrap" Text="Endereços" VerticalAlignment="Top" Foreground="White" FontSize="32" />
+
+        <Label Content="Logradouro" HorizontalAlignment="Left" Margin="553,301,0,0" VerticalAlignment="Top" FontSize="25" Foreground="White"/>
+        <TextBox x:Name="logradouro" HorizontalAlignment="Left" Margin="697,308,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="139" Height="26" RenderTransformOrigin="0.53,1.442" VerticalContentAlignment="Center" MaxLength="60" />
+
+        <Label Content="Número" HorizontalAlignment="Left" Margin="841,301,0,0" VerticalAlignment="Top" FontSize="25" Foreground="White"/>
+        <TextBox x:Name="numero" HorizontalAlignment="Left" Margin="947,310,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" Height="26" RenderTransformOrigin="0.53,1.442" VerticalContentAlignment="Center" PreviewTextInput="IsNumber"  />
+
+        <Label Content="Complemento" HorizontalAlignment="Left" Margin="526,336,0,0" VerticalAlignment="Top" FontSize="25" Foreground="White"/>
+        <TextBox x:Name="complemento" HorizontalAlignment="Left" Margin="698,345,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="138" Height="26" RenderTransformOrigin="0.53,1.442" VerticalContentAlignment="Center" MaxLength="10" />
+
+        <Label Content="Bairro" HorizontalAlignment="Left" Margin="619,370,0,0" VerticalAlignment="Top" FontSize="25" Foreground="White" RenderTransformOrigin="0.543,-0.777"/>
+        <TextBox x:Name="bairro" HorizontalAlignment="Left" Margin="698,380,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="138" Height="26" RenderTransformOrigin="0.53,1.442" VerticalContentAlignment="Center" MaxLength="30"/>
+
+        <Label Content="Cidade" HorizontalAlignment="Left" Margin="855,367,0,0" VerticalAlignment="Top" FontSize="25" Foreground="White"/>
+        <TextBox x:Name="cidade" HorizontalAlignment="Left" Margin="947,379,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="133" Height="26" RenderTransformOrigin="0.53,1.442" VerticalContentAlignment="Center" MaxLength="23"/>
+
+        <Label Content="CEP" HorizontalAlignment="Left" Margin="890,336,0,0" VerticalAlignment="Top" FontSize="25" Foreground="White"/>
+        <TextBox x:Name="cep" HorizontalAlignment="Left" Margin="947,345,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="133" Height="26" RenderTransformOrigin="0.53,1.442" VerticalContentAlignment="Center" MaxLength="8" PreviewTextInput="IsNumber"  />
+
+        <ListBox x:Name="enderecos" Margin="687,419,11,201" MaxWidth="500" MaxHeight="175"/>
+
+        <Button Content="X" HorizontalAlignment="Left" Margin="1178,418,0,0" VerticalAlignment="Top" Width="20" ToolTip="Apagar Tel 1" Background="White" Foreground="#FFFF0C0C" Click="ApagarEnd1" />
+        <Button Content="X" HorizontalAlignment="Left" Margin="1178,438,0,0" VerticalAlignment="Top" Width="20" ToolTip="Apagar Tel 2" Background="White" Foreground="#FFFF0C0C" Click="ApagarEnd2" />
+        <Button Content="X" HorizontalAlignment="Left" Margin="1178,458,0,0" VerticalAlignment="Top" Width="20" ToolTip="Apagar Tel 3" Background="White" Foreground="#FFFF0C0C" Click="ApagarEnd3" />
+
+        <Button Content="Limpar Lista" HorizontalAlignment="Left" Margin="1085,325,0,0" VerticalAlignment="Top" Height="38" Width="114" FontSize="20" Click="ApagarEnderecos"/>
+        <Button Content="Adicionar" HorizontalAlignment="Left" Margin="1085,370,0,0" VerticalAlignment="Top" Height="38" Width="114" FontSize="25" Click="EnderecoADD"/>
+
+
+
+
+        <!-- Final -->
+
+        <Button Content="Salvar" HorizontalAlignment="Left" Margin="405,577,0,0" VerticalAlignment="Top" Height="43" Width="152" FontSize="28" Click="Submit"/>
+
+        <Button Content="Cancelar" HorizontalAlignment="Left" Margin="623,577,0,0" VerticalAlignment="Top" Height="43" Width="152" FontSize="28" />
+        <Button Content="Clientes Cadastrados" HorizontalAlignment="Left" Margin="1024,625,0,0" VerticalAlignment="Top" Height="45" Width="180" FontSize="16" FontWeight="Bold" Click="Button_Click"/>
+
+
+    </Grid>
+
+
+
+</Window>

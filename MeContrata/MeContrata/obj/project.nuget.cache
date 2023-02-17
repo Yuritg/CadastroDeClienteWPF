@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "jzt/dLSCQEWnN6l7dSrbwxikklwAeRJCdpL/TDhAV4OUsEXs3pRF9fDz7uyGJNmSttYK5tc71ssITW+BT8ulbw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\yurio\\OneDrive\\Área de Trabalho\\Tela de Cadastro\\MeContrata\\MeContrata\\MeContrata.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\yurio\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.0\\microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\yurio\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512",
+    "C:\\Users\\yurio\\.nuget\\packages\\npgsql\\7.0.2\\npgsql.7.0.2.nupkg.sha512",
+    "C:\\Users\\yurio\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
