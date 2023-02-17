@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MeContrata"
         mc:Ignorable="d"
-        Title="Dei o meu melhor - Cadastro de Clientes" Height="718" Width="1233">
+        Title="Dei o meu melhor - Cadastro de Clientes" Height="718" Width="1233" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" >
     <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -113,8 +113,8 @@
 
         <Button Content="Salvar" HorizontalAlignment="Left" Margin="405,577,0,0" VerticalAlignment="Top" Height="43" Width="152" FontSize="28" Click="Submit"/>
 
-        <Button Content="Cancelar" HorizontalAlignment="Left" Margin="623,577,0,0" VerticalAlignment="Top" Height="43" Width="152" FontSize="28" />
-        <Button Content="Clientes Cadastrados" HorizontalAlignment="Left" Margin="1024,625,0,0" VerticalAlignment="Top" Height="45" Width="180" FontSize="16" FontWeight="Bold" Click="Button_Click"/>
+        <Button Content="Cancelar" HorizontalAlignment="Left" Margin="623,577,0,0" VerticalAlignment="Top" Height="43" Width="152" FontSize="28"  Click="Cancelar" />
+        <Button Content="Clientes Cadastrados" HorizontalAlignment="Left" Margin="1024,625,0,0" VerticalAlignment="Top" Height="45" Width="180" FontSize="16" FontWeight="Bold" Click="Button_Click" />
 
 
     </Grid>

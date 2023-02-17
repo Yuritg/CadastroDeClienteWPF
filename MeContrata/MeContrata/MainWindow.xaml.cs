@@ -270,26 +270,27 @@ namespace MeContrata
 
                         MessageBox.Show("Cliente cadastrado com sucesso!");
 
+                        var json = new
+                        {
+                            nome_completo = nomecompleto.Text,
+                            cpf = cpf.Text,
+                            rg = rg.Text,
+                            sexo = sexo.Text,
+                            escolaridade = escolaridade.Text,
+                            profissao = profissao.Text,
+                            data_nascimento = nascimento.SelectedDate,
+                            telefones = telefones.Items.Cast<string>().ToList(),
+                            enderecos = enderecos.Items.Cast<string>().ToList()
+                        };
+
+
+                        var jsonWindow = new JsonShow();
+                        jsonWindow.JsonData(json);
+                        jsonWindow.Show();
 
 
                     }
-                    var json = new
-                    {
-                        nome_completo = nomecompleto.Text,
-                        cpf = cpf.Text,
-                        rg = rg.Text,
-                        sexo = sexo.Text,
-                        escolaridade = escolaridade.Text,
-                        profissao = profissao.Text,
-                        data_nascimento = nascimento.SelectedDate,
-                        telefones = telefones.Items.Cast<string>().ToList(),
-                        enderecos = enderecos.Items.Cast<string>().ToList()
-                    };
-
-
-                    var jsonWindow = new JsonShow();
-                    jsonWindow.JsonData(json);
-                    jsonWindow.Show();
+                   
                 }
 
             }
@@ -305,6 +306,13 @@ namespace MeContrata
             ClientesCadastrados.ShowTableDataGrid();
             ClientesCadastrados.Show();
         }
+
+        private void Cancelar(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+       
     }
 }
 
